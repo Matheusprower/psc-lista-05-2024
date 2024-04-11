@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] num = new int[20];
+        int[] par = new int[20];
+        int[] impar = new int[20];
+        int contpar = 0, contimpar = 0;
+        
+        System.out.println("Escreva 20 números");
+        
+        for (int i = 0; i < 20; i++) {
+            System.out.println("Número: " + (i + 1));
+            try {
+                num[i] = sc.nextInt();
+                
+                if (num[i] % 2 == 0) {
+                    par[contpar] = num[i];
+                    contpar++;
+                } else {
+                    impar[contimpar] = num[i];
+                    contimpar++;
+                }
+            } catch (Exception e) {
+                System.out.println("Erro: Você deve inserir um número inteiro.");
+                sc.next();
+                i--;
+            }
+        }
+        
+        System.out.println("Os números registrados foram: ");
+        for (int i = 0; i < 20; i++) {
+            if (i == 19) {
+                System.out.println(num[i]);
+            } else 
+            System.out.print(num[i] + ", ");
+        }
+        System.out.println("Os números pares registrados foram: ");
+        for (int i = 0; i <= contpar; i++) {
+            if (i == contpar) {
+                System.out.println(par[i]);
+            } else 
+            System.out.print(par[i] + ", ");
+        }
+        System.out.println("Os números impares registrados foram: ");
+        for (int i = 0; i <= contimpar; i++) {
+            if (i == contimpar) {
+                System.out.println(impar[i]);
+            } else 
+            System.out.print(impar[i] + ", ");
+        }
+        sc.close();
+    }
+}
