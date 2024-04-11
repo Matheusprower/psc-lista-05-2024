@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    double[][] notas = new double[10][4];
+	    double media = 0;
+	    int cont = 0;
+ 		System.out.println("Escreva 4 notas para 10 alunos");
+		for (int i = 0; i < 10; i++) {
+		    System.out.println("Aluno: " + (i + 1));
+		    for (int l = 0; l < 4; l++) {
+		        System.out.println("Nota: " + (l + 1));
+		    try {
+		        notas[i][l] = sc.nextDouble();
+		    } catch (Exception a) {
+		        System.out.println("Erro: Você deve inserir um número real.");
+                sc.next();
+                l--;
+		    }
+		    
+		}
+	}
+	for (int i = 0; i < 10; i++) {
+	    media = (notas[i][0] + notas[i][1] + notas[i][2] + notas[i][3])/4;
+	    if (media >= 7) {
+	        cont++;
+	    }
+	}
+	System.out.println("A quantidade de alunos acima da média é: " + cont);
+		sc.close();
+}
+}
