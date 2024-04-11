@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    int[] num = new int[5];
+	    int soma = 0, mult = 0;
+ 		System.out.println("Escreva 5 números inteiros");
+		for (int i = 0; i < 5; i++) {
+		    System.out.println("Número: " + (i + 1));
+		    try {
+		        num[i] = sc.nextInt();
+		    } catch (Exception a) {
+		        System.out.println("Erro: Você deve inserir um número inteiro.");
+                sc.next();
+                i--;
+		    }
+		}
+		soma = num[0] + num[1] + num[2] + num[3] + num[4];
+		mult = num[0] * num[1] * num[2] * num[3] * num[4];
+	    System.out.println("A soma dos valores dão: " + soma);
+	    System.out.println("A multiplicação dos valores dão: " + mult);
+	    System.out.print("Os valores são: ");
+	    for (int i = 0; i < 5; i++) {
+	        if (i == 4) {
+	            System.out.println(num[i]);
+	        } else
+	        System.out.print(num[i] + ", ");
+	    }
+		sc.close();
+    }
+}
